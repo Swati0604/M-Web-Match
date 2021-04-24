@@ -1,0 +1,53 @@
+// ######################################## //
+// ## RESOURCES.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.resources-card-style {
+  margin: 18px -12px 0;
+
+  .resource-card-container {
+    padding: 12px 2px 12px 12px;
+  }
+
+  //card-style
+  .resources-card {
+    box-shadow: 0px 0px 16px rgba(54, 54, 54, 0.1);
+    padding: 16px 6px 14px 14px;
+    border-radius: 6px;
+  }
+
+  //image-style
+  .resources-image {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 16px;
+  }
+
+  //resouce-name
+  .resources-name {
+    color: $black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 138%;
+    margin-bottom: 2px;
+  }
+
+  .about-resources {
+    color: $secondary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 150%;
+    margin-bottom: 2px;
+  }
+
+  .owl-carousel .owl-item img {
+    width: auto;
+  }
+}

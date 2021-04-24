@@ -1,0 +1,62 @@
+// ######################################## //
+// ## FILTER-BUTTON-CAROUSEL.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.filter-list-style {
+  margin-bottom: 10px;
+  height: 220px;
+  overflow-y: scroll;
+
+  .filter-list-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  //image-style
+  .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $btn-color;
+    background-color: $btn-color;
+  }
+
+  .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+  }
+
+  .custom-control-label::before {
+    height: 15px;
+    width: 15px;
+  }
+
+  .custom-control-label::after {
+    left: -1.57rem;
+    width: 17px;
+    height: 13.5px;
+  }
+
+  .custom-checkbox
+    .custom-control-input:checked
+    ~ .custom-control-label::after {
+    background-image: url('../../assets/check.svg');
+  }
+
+  .custom-control-label {
+    color: $secondary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0 0px 0 10px;
+
+    &.focus {
+      outline: none;
+    }
+  }
+  .custom-checkbox .custom-control-label::before {
+    border-radius: 2.5px;
+  }
+}

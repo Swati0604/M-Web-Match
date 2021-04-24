@@ -1,0 +1,65 @@
+// ######################################## //
+// ## GUIDE.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.guide-card-style {
+  //card-style
+  .guide-card {
+    box-shadow: 0px 0px 16px rgba(54, 54, 54, 0.1);
+    padding: 16px 6px 14px 14px;
+    border-radius: 6px;
+  }
+
+  //image-style
+  .guide-image {
+    height: 150px;
+    width: 100%;
+    margin: -16px -6px 16px -15px;
+    border-radius: 6px 6px 0px 0px;
+  }
+
+  //resouce-name
+  .guide-name {
+    color: $black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 138%;
+    margin-bottom: 2px;
+  }
+
+  .about {
+    color: $secondary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 150%;
+    margin-bottom: 2px;
+  }
+
+  .guide-card-bottom-section {
+    display: flex;
+    align-items: flex-start;
+
+    .icons-text {
+      width: 60%;
+      display: flex;
+      align-items: center;
+
+      .icons {
+        margin-right: 8px;
+        height: 11px;
+        width: 11px;
+      }
+
+      .sub-title {
+        font-size: 12px;
+      }
+    }
+  }
+}

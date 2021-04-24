@@ -1,0 +1,88 @@
+// ######################################## //
+// ## JOB CARD.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.job-card-style {
+  margin-bottom: 20px;
+  padding: 16px;
+  box-shadow: 0px 0px 16px rgba(54, 54, 54, 0.1);
+  border-radius: 6px;
+
+  .job-card-top-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .img-card {
+      height: 80px;
+      width: 80px;
+      border-radius: 4px;
+      border: 1px solid rgba(104, 112, 134, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .company-logo {
+      height: 100%;
+      width: 100%;
+    }
+
+    .company-job-details {
+      margin-left: 16px;
+    }
+
+    .position {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .company {
+      font-size: 13px;
+      margin-bottom: 11px;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .tag {
+      background-color: rgba($secondary, 0.06);
+      font-size: 11px;
+      font-family: 'Nunito', sans-serif;
+      color: $secondary;
+      line-height: 100%;
+      padding: 4px 6px;
+      border-radius: 25px;
+      margin-right: 8px;
+    }
+  }
+
+  .job-card-bottom-section {
+    display: flex;
+    align-items: flex-start;
+
+    .icons-text {
+      width: 33%;
+      display: flex;
+      align-items: center;
+
+      .icons {
+        margin-right: 8px;
+        height: 11px;
+        width: 11px;
+      }
+
+      .sub-title {
+        font-size: 12px;
+      }
+    }
+  }
+}

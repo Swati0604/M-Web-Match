@@ -1,0 +1,21 @@
+// ######################################## //
+// ## RESOURCES.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.guide-sec-style {
+  margin: 0px -12px 0;
+
+  .guide-card-container {
+    margin-top: 10px;
+    padding: 12px 2px 12px 12px;
+  }
+
+  .owl-carousel .owl-item img {
+    width: -webkit-fill-available;
+  }
+}

@@ -1,0 +1,123 @@
+// ######################################## //
+// ## DESIGNERS-LISTING.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/variables/mixins.scss';
+
+.mentor-profile-style {
+  .mentor-profile-banner {
+    background-color: $book-flow-bg;
+    background-image: url('../../../assets/mentorBg.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    display: flex;
+    padding: 20px 12px;
+    width: 100%;
+
+    .banner-top-section {
+      display: flex;
+    }
+
+    .image-tag-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 12px;
+    }
+
+    .mentor-image-container {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      .mentor-image {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .mentor-tag-container {
+      background-image: url('../../../assets/mentorTagBg.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 48px;
+      width: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -28px;
+      position: relative;
+
+      .mentor-tag {
+        font-size: 12px;
+        font-weight: 600;
+        font-family: 'Nunito', sans-serif;
+        line-height: 100%;
+        color: $white;
+        margin-bottom: 0px;
+      }
+    }
+
+    .icons-text {
+      width: 100%;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+
+      .icons {
+        margin-right: 8px;
+        height: 11px;
+        width: 11px;
+      }
+    }
+
+    .banner-bottom-section {
+      margin-top: 12px;
+      margin-bottom: 20px;
+
+      .sub-title {
+        font-size: 16px;
+      }
+
+      .social-media-icon-container {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .social-media-link {
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        background: $white;
+        justify-content: center;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .designer-listing-content {
+    padding: 0 12px;
+
+    .text-box {
+      margin: 30px 0px;
+
+      .heading {
+        margin-bottom: 6px;
+      }
+    }
+
+    .books-carousel-container {
+      margin: 48px 0px 0px;
+    }
+  }
+}

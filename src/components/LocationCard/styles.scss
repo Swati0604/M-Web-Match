@@ -1,0 +1,42 @@
+// ######################################## //
+// ## LOCATION CARD.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.location-card-style {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 18px;
+
+  .city-card-style {
+    width: 23%;
+  }
+
+  .city-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 15px rgba(54, 54, 54, 0.06);
+    padding: 10px 6px;
+    border-radius: 6px;
+  }
+  .city-name {
+    color: $secondary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    margin-bottom: 0px;
+    margin-top: 6px;
+  }
+  .city-image {
+    height: 36px;
+    width: 36px;
+  }
+}

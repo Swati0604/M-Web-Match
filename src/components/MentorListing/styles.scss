@@ -1,0 +1,21 @@
+// ######################################## //
+// ## MENTOR-CARD.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.mentor-listing-style {
+  .mentor-listing {
+    display: grid;
+    grid-template-columns: 48.3% 48.3%;
+    justify-content: space-between;
+    margin: 7px 0 20px 0;
+  }
+
+  .mentor-card-container {
+    margin-top: 13px;
+  }
+}

@@ -1,0 +1,26 @@
+// ######################################## //
+// ## banner.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.banner-card-style {
+  margin: 18px -12px 0;
+
+  .banner-card-container {
+    padding: 12px 2px 3px 12px;
+  }
+
+  //image-style
+  .banner-image {
+    height: 220px;
+    width: 100%;
+  }
+
+  .owl-carousel .owl-item img {
+    width: 100%;
+  }
+}

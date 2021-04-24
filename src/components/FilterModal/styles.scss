@@ -1,0 +1,61 @@
+// ######################################## //
+// ## STYLES.SCSS ## //
+// ######################################## //
+
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+.filter-modal-style {
+  .modal-dialog {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .close-button {
+    position: absolute;
+    top: -70px;
+    right: 35%;
+  }
+
+  .modal-body {
+    padding: 0;
+    height: 420px;
+  }
+
+  .modal-content {
+    height: 100%;
+    box-shadow: 0px 16px 16px rgba(54, 54, 54, 0.08),
+      0px 32px 32px rgba(54, 54, 54, 0.08);
+    border: none;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .top-header {
+    padding: 20px 12px;
+    box-shadow: 0px 1px 0px rgba(28, 28, 28, 0.2);
+
+    .filter-job-heading {
+      color: $primary;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+      margin-bottom: 0px;
+    }
+  }
+
+  .filter-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px -6px 16px rgba(54, 54, 54, 0.08);
+    border-radius: 12px 12px 0px 0px;
+    padding: 14px 12px;
+
+    .filter-button {
+      height: 48px;
+    }
+  }
+}

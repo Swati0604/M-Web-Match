@@ -1,0 +1,57 @@
+// ######################################## //
+// ## FILTER-BUTTON-CAROUSEL.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.filter-button-carousel-style {
+  margin: 0px -12px 0;
+  margin-bottom: 10px;
+
+  .carousel {
+    display: flex;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+  }
+
+  .filter-button-container {
+    padding: 0px 2px 3px 12px;
+  }
+
+  //image-style
+  .button-left-image {
+    height: 12px;
+    width: 12px;
+    margin-right: 5px;
+  }
+
+  .button-right-image {
+    height: 6px;
+    width: 9px;
+    margin-left: 5px;
+  }
+
+  .filter-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: $white;
+    border: 1px solid $border-color;
+    border-radius: 45px;
+    padding: 5px 12px;
+    color: $secondary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,175 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+// Navbar Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.header-style {
+  // sidenav open styling
+  .sidenav {
+    position: fixed;
+    z-index: 9999;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    width: 0;
+    padding-top: 15px;
+    background-color: $white;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    &.open-navbar {
+      width: 100%;
+    }
+
+    //menu-items styling
+    .nav-link {
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      color: $primary;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+    }
+
+    //coming soon text (post job right)
+    .coming-soon-status {
+      background-color: $btn-bg;
+      color: $white;
+      font-weight: 500;
+      font-size: 11px;
+      padding: 4px;
+      margin-left: 12px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    //dropdown-btn
+    .dropdown-btn {
+      background-color: $white;
+      border: none;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    //dropdown-container
+    .dropdown-container {
+      display: flex;
+      flex-direction: column;
+      padding-left: 18px;
+      transition: 0.5s;
+      position: relative;
+      height: 0;
+      overflow-y: hidden;
+
+      &.open-dropdown {
+        height: 120px;
+      }
+    }
+
+    //dropdown-link
+    .dropdown-link {
+      color: $secondary;
+      height: 40px;
+      font-size: 16px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+
+  // logo and menu-bar styling
+  .top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 60px;
+    box-shadow: inset 0px -0.3px 0px rgba(28, 28, 28, 0.12);
+    position: fixed;
+    background: $white;
+    width: 100%;
+    z-index: 99;
+
+    .logo {
+      height: 25px;
+    }
+  }
+
+  //toggle menubar (menubar into cross)
+  .toggle-wrap {
+    position: relative;
+    cursor: pointer;
+
+    /*disable selection*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .toggle-bar,
+  .toggle-bar::before,
+  .toggle-bar::after,
+  .toggle-wrap.active .toggle-bar,
+  .toggle-wrap.active .toggle-bar::before,
+  .toggle-wrap.active .toggle-bar::after {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .toggle-bar {
+    width: 22.5px;
+    position: relative;
+    border-top: 2px solid rgba($secondary, 0.5);
+    display: block;
+  }
+  .toggle-bar::before,
+  .toggle-bar::after {
+    content: '';
+    display: block;
+    background: rgba($secondary, 0.5);
+    height: 2px;
+    width: 22.5px;
+    position: absolute;
+    top: -8px;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -ms-transform-origin: 13%;
+    -webkit-transform-origin: 13%;
+    transform-origin: 13%;
+  }
+  .toggle-bar::after {
+    top: 4px;
+  }
+  .toggle-wrap.active .toggle-bar {
+    border-top: 2px solid transparent;
+  }
+  .toggle-wrap.active .toggle-bar::before {
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .toggle-wrap.active .toggle-bar::after {
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}

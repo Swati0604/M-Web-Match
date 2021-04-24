@@ -1,0 +1,49 @@
+// ######################################## //
+// ## BOOKS-CAROUSEL.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.book-card-style {
+  .card-top-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    //image-style
+    .book-image {
+      height: 212px;
+      width: 140px;
+      margin-right: 12px;
+    }
+
+    .sub-title {
+      margin-bottom: 7px;
+    }
+
+    .glassdoor-rating {
+      margin-top: 7px;
+    }
+    //book-name
+    .book-name {
+      font-size: 18px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      line-height: 130%;
+      color: $primary;
+      margin-bottom: 6px;
+    }
+
+    .outline-button {
+      margin: 16px 0 12px;
+    }
+  }
+
+  .card-bottom-section {
+    margin-top: 12px;
+  }
+}

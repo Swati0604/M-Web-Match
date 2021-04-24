@@ -1,0 +1,40 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+// Navbar Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.back-navigation-style {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 13px 12px 11px 13px;
+
+  .back-navigation {
+    height: 20px;
+    width: 20px;
+    margin-right: 12px;
+  }
+
+  .page-name {
+    color: $primary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 2px;
+  }
+
+  .page-type {
+    color: $primary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 150%;
+    margin-bottom: 0;
+    letter-spacing: 0.16px;
+  }
+}

@@ -1,0 +1,52 @@
+// ######################################## //
+// ## TABS.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.tabs {
+  .tabs-column {
+    box-shadow: 1px 0px 0px rgba(28, 28, 28, 0.2);
+  }
+  .flex-column {
+    padding: 0px 0 20px;
+
+    height: 275px;
+  }
+
+  .nav-item {
+    margin: 20px 12px 0;
+  }
+
+  .nav-link {
+    color: $secondary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    margin-bottom: 0px;
+    padding: 0 0 20px;
+
+    &.active {
+      color: $primary;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 100%;
+      margin-bottom: 0px;
+    }
+  }
+
+  .tab-content {
+    padding: 19px 0px 20px 0px;
+    height: 275px;
+    margin-top: 1px;
+
+    .tab-content-title {
+      margin-bottom: 22px;
+    }
+  }
+}

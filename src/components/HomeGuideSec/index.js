@@ -44,8 +44,8 @@ function HomeGuideSec(props) {
       <OwlCarousel className='owl-theme' {...options}>
         {props.db &&
           props.db.Guide &&
-          props.db.Guide.map((data) => (
-            <div className='guide-card-container'>
+          props.db.Guide.map((data, index) => (
+            <div className='guide-card-container' key={index}>
               <GuideCard
                 guideTitle={data.Title}
                 guideType='Job Application'

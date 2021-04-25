@@ -35,7 +35,9 @@ function Home(props) {
         <div className='resources'>
           <div className='heading-see-all-button'>
             <Title title='Design Resources' />
-            <Link className='see-all-button'>See all</Link>
+            <Link to='/' className='see-all-button'>
+              See all
+            </Link>
           </div>
 
           <SubTitle subTitle='We have more than jobs on Match. Checkout below:' />
@@ -73,7 +75,9 @@ function Home(props) {
         <div className='guides-section'>
           <div className='heading-see-all-button'>
             <Title title='Guides' />
-            <Link className='see-all-button'>See all</Link>
+            <Link to='/' className='see-all-button'>
+              See all
+            </Link>
           </div>
 
           <SubTitle subTitle='Good reads to prepare for design jobs.' />

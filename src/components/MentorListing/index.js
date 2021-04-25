@@ -19,8 +19,8 @@ function MentorListing(props) {
       <div className='mentor-listing'>
         {props.db &&
           props.db.Mentors &&
-          props.db.Mentors.slice(0, visibleMentor).map((data) => (
-            <div className='mentor-card-container'>
+          props.db.Mentors.slice(0, visibleMentor).map((data, index) => (
+            <div className='mentor-card-container' key={index}>
               <MentorCard
                 mentorImage={data.Image}
                 //title={data.Title}

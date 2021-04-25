@@ -47,7 +47,7 @@ function Header() {
         </a>
 
         {/* About DS Dropdown */}
-        <button class='nav-link dropdown-btn' onClick={toggleAboutDropdown}>
+        <button className='nav-link dropdown-btn' onClick={toggleAboutDropdown}>
           About
           {isAboutDropdownOpen ? (
             <img src={arrowTop} className='logo' alt='logo' />
@@ -74,7 +74,10 @@ function Header() {
         </div>
 
         {/* Resources Dropdown */}
-        <button class='nav-link dropdown-btn' onClick={toggleResourceDropdown}>
+        <button
+          className='nav-link dropdown-btn'
+          onClick={toggleResourceDropdown}
+        >
           Resources
           {isResourceDropdownOpen ? (
             <img src={arrowTop} className='logo' alt='logo' />

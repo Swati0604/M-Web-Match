@@ -42,10 +42,10 @@ function BannerCarousel(props) {
       <OwlCarousel className='owl-theme' {...options}>
         {props.db &&
           props.db.Dyanmic &&
-          props.db.Dyanmic.map((data) => (
-            <div className='banner-card-container'>
+          props.db.Dyanmic.map((data, index) => (
+            <div className='banner-card-container' key={index}>
               <div className='banner-card'>
-                <Link>
+                <Link to='/'>
                   <img
                     src={data.Image}
                     alt='banner-image'

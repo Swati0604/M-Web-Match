@@ -10,7 +10,7 @@ import './styles.scss';
 function BackNavigation(props) {
   return (
     <div className='back-navigation-style'>
-      <Link>
+      <Link to='/'>
         <img src={back} alt='back-navigation' className='back-navigation' />
       </Link>
       <div className='text-box'>

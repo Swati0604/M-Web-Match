@@ -50,10 +50,10 @@ function BooksCarousel(props) {
       <OwlCarousel className='owl-theme' {...options}>
         {props.db &&
           props.db.Books &&
-          props.db.Books.map((data) => (
-            <div className='book-card-container'>
+          props.db.Books.map((data, index) => (
+            <div className='book-card-container' key={index}>
               <div className='book-card'>
-                <Link>
+                <Link to='/'>
                   <img
                     src={data.Image}
                     alt='book-image'

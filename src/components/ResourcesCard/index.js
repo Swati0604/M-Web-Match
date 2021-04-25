@@ -68,8 +68,8 @@ function ResourcesCard() {
     <div className='resources-card-style'>
       <OwlCarousel className='owl-theme' {...options}>
         {resources &&
-          resources.map((data) => (
-            <div className='resource-card-container'>
+          resources.map((data, index) => (
+            <div className='resource-card-container' key={index}>
               <div className='resources-card'>
                 <img
                   src={data.src}

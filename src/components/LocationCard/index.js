@@ -30,8 +30,8 @@ function LocationCard() {
   return (
     <div className='location-card-style'>
       {location &&
-        location.map((data) => (
-          <div className='city-card-style'>
+        location.map((data, index) => (
+          <div className='city-card-style' key={index}>
             <div className='city-card'>
               <img src={data.src} alt='city-image' className='city-image' />
               <p className='city-name'>{data.city}</p>

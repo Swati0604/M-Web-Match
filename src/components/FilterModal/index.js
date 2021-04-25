@@ -32,7 +32,7 @@ const FilterModal = (props) => {
         show={isModalVisible}
         //onHide={handleClose}
         backdrop='static'
-        animation={false}
+        animation={true}
         className='filter-modal-style'
       >
         <div className='close-button' onClick={handleClose}>

@@ -15,7 +15,7 @@ function BottomNavBar() {
 
       {/* Home Link */}
       <div className='icon-link'>
-        <Link>
+        <Link to='/'>
           <img src={home} className='nav-img' alt='nav-img' />
           <br />
           <span className='link-text'>Home</span>
@@ -24,7 +24,7 @@ function BottomNavBar() {
 
       {/* Companies Link */}
       <div className='icon-link'>
-        <Link>
+        <Link to='/'>
           <img src={companies} className='nav-img' alt='nav-img' />
           <br />
           <span className='link-text inactive'>Companies</span>
@@ -33,7 +33,7 @@ function BottomNavBar() {
 
       {/* Resources Link*/}
       <div className='icon-link '>
-        <Link>
+        <Link to='/'>
           <img src={compass} className='nav-img' alt='nav-img' />
           <br />
           <span className='link-text inactive'>Resources</span>

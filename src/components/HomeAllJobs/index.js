@@ -143,26 +143,28 @@ function HomeAllJobs(props) {
       {props.db &&
         props.db.Sheet1 &&
         props.db.Sheet1.slice(0, visibleJob).map((data, index) => (
-          <div>
+          <div key={index}>
             {props.db &&
               props.db.Companies &&
               props.db.Companies.filter(
                 (item) => item.Company === data.Company
               ).map((item, index) => (
-                <JobCard
-                  companyLogo={item.Logo}
-                  position={data.Position}
-                  company={item.Company}
-                  jobType={data.JobType}
-                  location={data.Location}
-                  experience={data.Experience}
-                  isRemote={data.Remote}
-                  href={data.Link}
-                  slug={data.Slug}
-                  tag1={item.Tag1}
-                  tag2={item.Tag2}
-                  tag3={item.Tag3}
-                />
+                <div key={index}>
+                  <JobCard
+                    companyLogo={item.Logo}
+                    position={data.Position}
+                    company={item.Company}
+                    jobType={data.JobType}
+                    location={data.Location}
+                    experience={data.Experience}
+                    isRemote={data.Remote}
+                    href={data.Link}
+                    slug={data.Slug}
+                    tag1={item.Tag1}
+                    tag2={item.Tag2}
+                    tag3={item.Tag3}
+                  />
+                </div>
               ))}
           </div>
         ))}
@@ -180,7 +182,9 @@ function HomeAllJobs(props) {
         firstTabContentTitle='Select experience in years:'
         secondTabContentTitle='Select a job location:'
         thirdTabContentTitle='Select a required job type:'
-        firstTabContent={<FilterList filterList={experience} />}
+        firstTabContent={
+          <FilterList filterList={experience} onChange={console.log('hey')} />
+        }
         secondTabContent={<FilterList filterList={location} />}
         thirdTabContent={<FilterList filterList={jobType} />}
       />

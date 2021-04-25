@@ -5,8 +5,8 @@ function FilterButtonCarousel(props) {
   return (
     <div className='filter-button-carousel-style'>
       <div className='carousel'>
-        {props.filterButtons.map((data) => (
-          <div className='filter-button-container'>
+        {props.filterButtons.map((data, index) => (
+          <div className='filter-button-container' key={index}>
             <button
               className='filter-button'
               onClick={(id) => props.onClickFilterButton(data.id)}

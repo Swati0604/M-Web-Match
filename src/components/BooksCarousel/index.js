@@ -14,8 +14,8 @@ const options = {
   autoplay: false,
   loop: true,
   navText: [
-    "<div class='nav-btn prev-slide'></div>",
-    "<div class='nav-btn next-slide'></div>",
+    "<div className='nav-btn prev-slide'></div>",
+    "<div className='nav-btn next-slide'></div>",
   ],
   smartSpeed: 1000,
   responsive: {

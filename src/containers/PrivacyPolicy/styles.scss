@@ -1,0 +1,64 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.privacy-policy-style {
+  .privacy-policy-container {
+    padding: 90px 12px 180px;
+
+    .policy-section {
+      margin-top: 30px;
+    }
+
+    .title {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .sub-title {
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    .footer-section {
+      margin-top: 40px;
+    }
+  }
+
+  .jobs-by-location {
+    margin-top: 28px;
+  }
+
+  .resources {
+    margin-top: 40px;
+  }
+
+  .heading-see-all-button {
+    margin-bottom: 10px;
+  }
+
+  .all-jobs-container {
+    margin-top: 20px;
+
+    .job-length {
+      margin-top: 10px;
+    }
+
+    .number-of-jobs {
+      color: $primary;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 27px;
+    }
+  }
+
+  .guides-section {
+    margin-top: 48px;
+  }
+}

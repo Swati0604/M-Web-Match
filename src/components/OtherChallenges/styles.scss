@@ -1,0 +1,28 @@
+// ######################################## //
+// ## GUIDE.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.other-challenge-card-style {
+  padding-top: 13px;
+  //card-style
+
+  .challenge-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 20px rgba(54, 54, 54, 0.04);
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 13px;
+  }
+
+  .owl-item {
+    padding: 5px 3px;
+  }
+}

@@ -65,7 +65,7 @@ const FilterModal = (props) => {
             </button>
             <button
               className='solid-button filter-button'
-              onClick={onClickApply}
+              onClick={() => onClickApply()}
             >
               Apply Filters
             </button>

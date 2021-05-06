@@ -1,7 +1,7 @@
 function LoadMoreButton(props) {
   return (
     <button className='load-more-button' onClick={props.onClick}>
-      Load More Jobs
+      {props.buttonText}
     </button>
   );
 }

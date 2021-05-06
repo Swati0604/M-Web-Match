@@ -6,9 +6,6 @@ import { withGoogleSheets } from 'react-db-google-sheets';
 import Header from '../../components/Header';
 import LocationCard from '../../components/LocationCard';
 import Title from '../../components/Title';
-
-//Styles
-import './styles.scss';
 import SubTitle from '../../components/SubTitle';
 import ResourcesCard from '../../components/ResourcesCard';
 import HomeAllJobs from '../../components/HomeAllJobs';
@@ -16,6 +13,9 @@ import HomeGuideSec from '../../components/HomeGuideSec';
 import Footer from '../../components/Footer';
 import BottomNavBar from '../../components/BottomNavBar';
 import BannerCarousel from '../../components/BannerCarousel';
+
+//Styles
+import './styles.scss';
 
 function Home(props) {
   return (
@@ -35,9 +35,9 @@ function Home(props) {
         <div className='resources'>
           <div className='heading-see-all-button'>
             <Title title='Design Resources' />
-            <Link to='/' className='see-all-button'>
+            <a to='/resources' className='see-all-button'>
               See all
-            </Link>
+            </a>
           </div>
 
           <SubTitle subTitle='We have more than jobs on Match. Checkout below:' />
@@ -75,9 +75,9 @@ function Home(props) {
         <div className='guides-section'>
           <div className='heading-see-all-button'>
             <Title title='Guides' />
-            <Link to='/' className='see-all-button'>
+            <a href='/guide-listing' className='see-all-button'>
               See all
-            </Link>
+            </a>
           </div>
 
           <SubTitle subTitle='Good reads to prepare for design jobs.' />

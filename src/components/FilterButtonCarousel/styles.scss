@@ -39,6 +39,12 @@
     margin-left: 5px;
   }
 
+  .cross-image {
+    height: 14px;
+    width: 14px;
+    margin-left: 5px;
+  }
+
   .filter-button {
     display: flex;
     align-items: center;
@@ -53,5 +59,11 @@
     font-size: 14px;
     line-height: 20px;
     white-space: nowrap;
+
+    &.selected {
+      background: rgba(27, 72, 187, 0.06);
+      border: 1px solid rgba(27, 72, 187, 0.2);
+      color: $btn-color;
+    }
   }
 }

@@ -1,0 +1,52 @@
+// ######################################## //
+// ## RESOURCES.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.guide-listing-card {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  .text-container {
+    margin-right: 12px;
+  }
+
+  .img-container {
+    height: 70px;
+    width: 74px;
+
+    .img {
+      height: 100%;
+      width: 100%;
+      border-radius: 4px;
+    }
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .tag-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    .tag {
+      display: flex;
+      align-items: center;
+      margin-right: 12px;
+    }
+
+    .sub-title {
+      font-size: 12px;
+      margin-left: 8px;
+    }
+  }
+}

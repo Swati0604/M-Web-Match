@@ -30,7 +30,7 @@ function GuideCard(props) {
           {props.time && (
             <div className='icons-text'>
               <img alt='icons' className='icons' src={clockIcon} />
-              <p className='sub-title'>{props.time}</p>
+              <p className='sub-title'>{props.time} Min read</p>
             </div>
           )}
         </div>

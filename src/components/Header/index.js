@@ -28,7 +28,9 @@ function Header() {
     <div className='header-style'>
       {/* Top Header Logo and navbar-icon*/}
       <div className='top-header'>
-        <img src={logo} className='logo' alt='logo' />
+        <a href='/'>
+          <img src={logo} className='logo' alt='logo' />
+        </a>
         <div
           className={openNav ? 'toggle-wrap active' : 'toggle-wrap'}
           onClick={toggleNavbar}
@@ -65,7 +67,7 @@ function Header() {
           <a href='#' className='nav-link dropdown-link'>
             Changelog
           </a>
-          <a href='#' className='nav-link dropdown-link'>
+          <a href='/privacy-policy' className='nav-link dropdown-link'>
             Privacy Policy
           </a>
           <a href='#' className='nav-link dropdown-link'>
@@ -92,10 +94,10 @@ function Header() {
               : 'dropdown-container'
           }
         >
-          <a href='#' className='nav-link dropdown-link'>
+          <a href='/guide-listing' className='nav-link dropdown-link'>
             Guides
           </a>
-          <a href='#' className='nav-link dropdown-link'>
+          <a href='/challenge-listing' className='nav-link dropdown-link'>
             Take Home Challenges
           </a>
           <a href='#' className='nav-link dropdown-link'>

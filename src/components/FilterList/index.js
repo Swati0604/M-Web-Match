@@ -10,10 +10,12 @@ function FilterList(props) {
         <div className='filter-list-container' key={index}>
           <Form.Check
             custom
-            type='checkbox'
+            type='radio'
             id={data.id}
+            name={data.name}
             label={data.filterName}
-            onClick={console.log('Hey')}
+            value={data.filterName}
+            onChange={(e) => props.onChange(e)}
           />
         </div>
       ))}

@@ -1,0 +1,26 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/variables/mixins.scss';
+
+.guide-listing-style {
+  .guide-listing-container {
+    padding: 90px 12px 0;
+
+    .guide-card-section {
+      margin-top: 30px;
+    }
+  }
+
+  .other-challenge-listing {
+    margin-top: 40px;
+
+    .heading-see-all-button {
+      margin-bottom: 10px;
+    }
+  }
+}

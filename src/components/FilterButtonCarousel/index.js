@@ -1,3 +1,7 @@
+//Images
+import arrowBottom from '../../assets/arrow-bottom.svg';
+import cross from '../../assets/cross.svg';
+
 //Styles
 import './styles.scss';
 
@@ -8,8 +12,11 @@ function FilterButtonCarousel(props) {
         {props.filterButtons.map((data, index) => (
           <div className='filter-button-container' key={index}>
             <button
-              className='filter-button'
-              onClick={(id) => props.onClickFilterButton(data.id)}
+              className={
+                data.isDataSelected ? 'filter-button selected' : 'filter-button'
+              }
+              //onClick={(id) => props.onClickFilterButton(data.id)}
+              onClick={(id) => data.onClick(data.id)}
             >
               {data.buttonLeftImg && (
                 <img
@@ -19,13 +26,16 @@ function FilterButtonCarousel(props) {
                 />
               )}
               {data.buttonName}
-              {data.buttonRightImg && (
-                <img
-                  src={data.buttonRightImg}
-                  alt='button-right-image'
-                  className='button-right-image'
-                />
-              )}
+              {!data.filter &&
+                (data.isDataSelected ? (
+                  <img src={cross} alt='cross-image' className='cross-image' />
+                ) : (
+                  <img
+                    src={arrowBottom}
+                    alt='button-right-image'
+                    className='button-right-image'
+                  />
+                ))}
             </button>
           </div>
         ))}

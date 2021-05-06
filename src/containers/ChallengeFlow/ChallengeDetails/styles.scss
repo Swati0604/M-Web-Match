@@ -1,0 +1,37 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/variables/mixins.scss';
+
+.challenge-details-style {
+  .challenge {
+    padding: 80px 12px 0;
+
+    .sub-title {
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      margin-top: 10px;
+    }
+
+    .title {
+      margin-top: 30px;
+    }
+
+    .guides-section {
+      margin-top: 27px;
+    }
+  }
+
+  .other-challenge-listing {
+    margin-top: 40px;
+    padding: 0 12px;
+
+    .heading-see-all-button {
+      margin-bottom: 10px;
+    }
+  }
+}

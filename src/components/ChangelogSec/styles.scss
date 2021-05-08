@@ -1,0 +1,38 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+// Navbar Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.changelog-sec-style {
+  .nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+
+    .nav-link {
+      border-radius: 36px;
+      border-top-left-radius: 36px;
+      border-top-right-radius: 36px;
+      border: 1px solid $border-color;
+      padding: 5px 8px;
+    }
+
+    .nav-link.active {
+      border: 1px solid rgba(27, 72, 187, 0.2);
+      background: rgba(27, 72, 187, 0.06);
+      color: $btn-color;
+    }
+
+    #controlled-tab-example-tab-all {
+      padding: 5px 14px 5px 16px;
+    }
+  }
+
+  .not-found-cont {
+    margin-top: 40px;
+  }
+}

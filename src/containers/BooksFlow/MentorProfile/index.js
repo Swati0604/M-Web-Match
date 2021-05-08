@@ -5,12 +5,10 @@ import { withGoogleSheets } from 'react-db-google-sheets';
 //Custom Component
 import Footer from '../../../components/Footer';
 import BackNavigation from '../../../components/BackNavigation';
-import MentorListing from '../../../components/MentorListing';
 import Title from '../../../components/Title';
 import BooksCarousel from '../../../components/BooksCarousel';
 
 //Images
-import houseIcon from '../../../assets/houseIcon.svg';
 import jobTypeIcon from '../../../assets/job-type.svg';
 import insta from '../../../assets/insta.svg';
 import linkedin from '../../../assets/linkedin.svg';
@@ -61,27 +59,27 @@ function MentorProfile(props) {
                   <div className='banner-bottom-section'>
                     <p className='sub-title'>{data.MentorDescription}</p>
                     <div className='social-media-icon-container'>
-                      <Link href={data.Twitter} className='social-media-link'>
+                      <a href={data.Twitter} className='social-media-link'>
                         <img
                           src={twitter}
                           alt='twitter'
                           className='social-media-icon'
                         />
-                      </Link>
-                      <Link href={data.Insta} className='social-media-link'>
+                      </a>
+                      <a href={data.Insta} className='social-media-link'>
                         <img
                           src={insta}
                           alt='insta'
                           className='social-media-icon'
                         />
-                      </Link>
-                      <Link href={data.Linkedin} className='social-media-link'>
+                      </a>
+                      <a href={data.Linkedin} className='social-media-link'>
                         <img
                           src={linkedin}
                           alt='linkedIn'
                           className='social-media-icon'
                         />
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

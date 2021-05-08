@@ -1,8 +1,5 @@
 import { withGoogleSheets } from 'react-db-google-sheets';
-
-//Images
-import clockIcon from '../../assets/clock.svg';
-import jobTypeIcon from '../../assets/job-type.svg';
+import { Link } from 'react-router-dom';
 
 //Styles
 import './styles.scss';
@@ -16,7 +13,7 @@ function ChallengeCardSec(props) {
           props.db.Assignment.map((data, index) => {
             return (
               <div className='col-6' key={index}>
-                <a href={`/challenge-details/${data.Company}`}>
+                <Link to={`/challenge-details/${data.Company}`}>
                   <div className='challenge-card'>
                     <img
                       src={data.Logo}
@@ -24,7 +21,7 @@ function ChallengeCardSec(props) {
                       className='challenge-image'
                     />
                   </div>
-                </a>
+                </Link>
               </div>
             );
           })}

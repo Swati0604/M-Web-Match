@@ -1,0 +1,63 @@
+// ######################################## //
+// ## DESIGNERS-LISTING.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/variables/mixins.scss';
+
+.book-detail-style {
+  .book-detail-banner {
+    background-image: url('../../../assets/books-details.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $book-flow-bg;
+    display: flex;
+    justify-content: center;
+    height: 302px;
+    width: 100%;
+    padding: 22px 0;
+  }
+
+  .book-detail-content {
+    padding: 0 12px;
+
+    .text-box {
+      margin: 30px 0px;
+
+      .heading {
+        margin-bottom: 6px;
+      }
+
+      .rating-sec {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+      }
+
+      .author-name {
+        font-weight: 600;
+        color: $secondary;
+        font-size: 18px;
+        line-height: 120%;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .books-carousel-container {
+    margin: 48px 0px 0px;
+    padding: 0 12px;
+  }
+
+  .review-section {
+    padding: 0 12px;
+
+    .load-btn-cont {
+      margin-top: 30px;
+    }
+  }
+}

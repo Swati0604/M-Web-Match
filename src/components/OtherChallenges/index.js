@@ -1,11 +1,8 @@
+import { Link } from 'react-router-dom';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { withGoogleSheets } from 'react-db-google-sheets';
-
-//Images
-import clockIcon from '../../assets/clock.svg';
-import jobTypeIcon from '../../assets/job-type.svg';
 
 //Styles
 import './styles.scss';
@@ -43,7 +40,7 @@ function OtherChallenges(props) {
             (data) => data.Company != props.companyName
           ).map((data) => {
             return (
-              <a href={`/challenge-details/${data.Company}`} className=''>
+              <Link to={`/challenge-details/${data.Company}`} className=''>
                 <div className='challenge-card'>
                   <img
                     src={data.Logo}
@@ -51,7 +48,7 @@ function OtherChallenges(props) {
                     className='challenge-image'
                   />
                 </div>
-              </a>
+              </Link>
             );
           })}
       </OwlCarousel>

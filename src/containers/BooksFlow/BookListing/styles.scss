@@ -1,0 +1,30 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/variables/mixins.scss';
+
+.books-listing-style {
+  .books-listing-container {
+    padding: 90px 12px 0;
+
+    .books-card-section {
+      margin-top: 30px;
+    }
+  }
+
+  .text-box {
+    margin: 30px 0px;
+
+    .heading {
+      margin-bottom: 6px;
+    }
+  }
+
+  .books-carousel-container {
+    margin: 48px 0px 0px;
+  }
+}

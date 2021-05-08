@@ -1,4 +1,6 @@
+import React, { useLayoutEffect } from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import GoogleSheetsProvider from 'react-db-google-sheets';
 
 //Home
 import Home from './containers/Home';
@@ -13,46 +15,59 @@ import PrivacyPolicy from './containers/PrivacyPolicy';
 //Take Home Challenge Flow
 import ChallengeListing from './containers/ChallengeFlow/ChallengeListing';
 import ChallengeDetails from './containers/ChallengeFlow/ChallengeDetails';
+
+//Resources
 import Resources from './containers/Resources';
+
+//Guide Flow
 import GuideListing from './containers/Guides/GuideListing';
 import GuideDetails from './containers/Guides/GuideDetails';
 
+//Changelog
+import Changelog from './containers/Changelog';
+import BooksListing from './containers/BooksFlow/BookListing';
+import BookDetail from './containers/BooksFlow/BookDetail';
+
+//Styles
+import './styles/App.scss';
+
 function AppRouter() {
   return (
-    <div>
-      <BrowserRouter>
-        <Switch>
-          {/* Home */}
-          <Route exact path='/' component={Home} />
+    <Switch>
+      {/* Home */}
+      <Route exact path='/' component={Home} />
 
-          {/* Book Flow */}
-          <Route exact path='/designer-listing' component={DesignersListing} />
-          <Route
-            exact
-            path='/mentor-profile/:mentorName'
-            component={MentorProfile}
-          />
+      {/* Book Flow */}
+      <Route exact path='/designer-listing' component={DesignersListing} />
+      <Route
+        exact
+        path='/mentor-profile/:mentorName'
+        component={MentorProfile}
+      />
+      <Route exact path='/books-listing' component={BooksListing} />
+      <Route exact path='/books-detail/:bookName' component={BookDetail} />
 
-          {/* Challenge Flow */}
-          <Route exact path='/challenge-listing' component={ChallengeListing} />
-          <Route
-            exact
-            path='/challenge-details/:companyName'
-            component={ChallengeDetails}
-          />
+      {/* Challenge Flow */}
+      <Route exact path='/challenge-listing' component={ChallengeListing} />
+      <Route
+        exact
+        path='/challenge-details/:companyName'
+        component={ChallengeDetails}
+      />
 
-          {/* Guide Flow */}
-          <Route exact path='/guide-listing' component={GuideListing} />
-          <Route exact path='/guide-details/:slug' component={GuideDetails} />
+      {/* Guide Flow */}
+      <Route exact path='/guide-listing' component={GuideListing} />
+      <Route exact path='/guide-details/:slug' component={GuideDetails} />
 
-          {/* Resources listing */}
-          <Route exact path='/resources' component={Resources} />
+      {/* Resources listing */}
+      <Route exact path='/resources' component={Resources} />
 
-          {/* Privacy Policy  */}
-          <Route exact path='/privacy-policy' component={PrivacyPolicy} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+      {/* Privacy Policy  */}
+      <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+
+      {/* Changelog */}
+      <Route exact path='/changelog' component={Changelog} />
+    </Switch>
   );
 }
 

@@ -9,10 +9,8 @@ import HomeGuideSec from '../../../components/HomeGuideSec';
 
 //Styles
 import './styles.scss';
-import ChallengeCardSec from '../../../components/ChallengeCardSec';
 import Title from '../../../components/Title';
 import SubTitle from '../../../components/SubTitle';
-import BackNavigation from '../../../components/BackNavigation';
 import DetailsHeader from '../../../components/DetailsHeader';
 import OtherChallenges from '../../../components/OtherChallenges';
 

@@ -1,0 +1,27 @@
+// ######################################## //
+// ## BOOKS-CAROUSEL.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.books-detail-style {
+  .button-cont {
+    margin-top: 20px;
+  }
+
+  .recommendation-no {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 150%;
+    color: $primary;
+    margin-top: 12px;
+  }
+
+  .horizontal-line {
+    margin: 20px -12px 0;
+    border: 1px solid #dde3e7;
+  }
+}

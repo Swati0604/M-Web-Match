@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ReactStars from 'react-rating-stars-component';
 
 //Styles
@@ -18,23 +19,25 @@ function BookCard(props) {
 
         <div className='book-detail-container'>
           <p className='book-name'>{truncate(props.title)}</p>
-          <p className='sub-title'>by: {truncateAuthorName(props.author)}</p>
+          {props.author && (
+            <p className='sub-title'>by: {truncateAuthorName(props.author)}</p>
+          )}
           <ReactStars value={props.glassdoorRatings} size={18} />
           <p className='sub-title glassdoor-rating'>
             {props.glassdoorRatings}({props.numberofRatings} Ratings)
           </p>
-          <a
-            href={`/mentor-profile/${props.bookName}`}
+          <Link
+            to={`/books-detail/${props.bookName}`}
             className='outline-button'
           >
             Learn More
-          </a>
-          <a
-            href={`/mentor-profile/${props.mentorName}`}
+          </Link>
+          <Link
+            to={`/books-detail/${props.mentorName}`}
             className='solid-button'
           >
             Buy Now
-          </a>
+          </Link>
         </div>
       </div>
       <div className='card-bottom-section'>

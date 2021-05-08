@@ -2,14 +2,12 @@ import { useState } from 'react';
 import { withGoogleSheets } from 'react-db-google-sheets';
 
 //Custom Component
-import JobCard from '../JobCard';
 import LoadMoreButton from '../LoadMoreButton';
 import FilterButtonCarousel from '../FilterButtonCarousel';
 import FilterModal from '../FilterModal';
 import FilterList from '../FilterList';
 
 //Image
-import arrowBottom from '../../assets/arrow-bottom.svg';
 import filter from '../../assets/filter.svg';
 
 //Styles
@@ -238,7 +236,6 @@ function GuideListingSec(props) {
           />
         )}
 
-      {filterData.length}
       {filterData.length === 0 && (
         <NotFound
           title='Sorry! We couldn’t find the filtered guide that you’re looking for.'

@@ -1,0 +1,19 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.changelog-listing-style {
+  .changelog-listing-container {
+    padding: 90px 12px 0;
+
+    .changelog-card-section {
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+}

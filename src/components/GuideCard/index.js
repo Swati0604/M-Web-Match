@@ -1,7 +1,3 @@
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-
 //Images
 import clockIcon from '../../assets/clock.svg';
 import jobTypeIcon from '../../assets/job-type.svg';

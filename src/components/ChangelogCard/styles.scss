@@ -1,0 +1,71 @@
+// ######################################## //
+// ## BOOKS-CAROUSEL.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.changelog-card-style {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 14px;
+  margin-top: 20px;
+
+  .feature-time-type {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .feature-type-container {
+      background-color: $theme-green;
+      padding: 5px 8px;
+      border-radius: 27px;
+      margin-right: 10px;
+    }
+
+    .feature-type {
+      margin-bottom: 0;
+      color: $white;
+    }
+  }
+
+  .description {
+    margin-top: 20px;
+
+    .sub-title {
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+  }
+
+  .card-bottom-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .img-container {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+
+      .img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .name {
+      font-weight: 700;
+      color: $black;
+      font-size: 14px;
+      line-height: 150%;
+      margin-bottom: 3px;
+    }
+
+    .sub-title {
+      font-weight: 500;
+    }
+  }
+}

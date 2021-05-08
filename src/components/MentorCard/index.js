@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 //Styles
 import './styles.scss';
 
 function MentorCard(props) {
   return (
     <div className='mentor-card-style'>
-      <a
+      <Link
         className='mentor-pic'
         style={{
           backgroundImage:
@@ -13,13 +15,13 @@ function MentorCard(props) {
             ')',
           backgroundRepeat: 'no-repeat',
         }}
-        href={`/mentor-profile/${props.mentorName}`}
+        to={`/mentor-profile/${props.mentorName}`}
       >
         <div className='mentor-details'>
           <p className='mentor-name'>{props.name}</p>
           <p className='mentor-title'>{props.title}</p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

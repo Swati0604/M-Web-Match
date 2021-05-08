@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 //Custom Component
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import BottomNavBar from '../../components/BottomNavBar';
 
 //Images
 import guide from '../../assets/guide.svg';
@@ -14,6 +12,7 @@ import interviewQuestion from '../../assets/interview-question.svg';
 
 //Styles
 import './styles.scss';
+import ChangelogSec from '../../components/ChangelogSec';
 
 const resources = [
   {
@@ -45,43 +44,27 @@ const resources = [
   },
 ];
 
-function Resources(props) {
+function Changelog(props) {
   return (
-    <div className='resource-listing-style'>
+    <div className='changelog-listing-style'>
       {/* navigation bar */}
       <Header />
 
-      <div className='resource-listing-container'>
+      <div className='changelog-listing-container'>
         <div className='text-section'>
-          <h4 className='heading'>Design Resources</h4>
+          <h4 className='heading'>Changelog</h4>
           <p className='sub-title'>
-            A few resources to help you ace your next opportunity.
+            Match is constantly evolving. You can see the new updates here
           </p>
         </div>
 
-        <div className='resources-card-container'>
-          {resources &&
-            resources.map((data) => {
-              return (
-                <Link className='resources-card' href={data.slug}>
-                  <div className='img-container'>
-                    <img src={data.url} className='img' alt='resource-img' />
-                  </div>
-                  <div className='text-container'>
-                    <p className='title'>{data.title}</p>
-                    <p className='sub-title'>{data.subTitle}</p>
-                  </div>
-                </Link>
-              );
-            })}
+        <div className='changelog-card-section'>
+          <ChangelogSec />
         </div>
-
         <Footer />
       </div>
-
-      <BottomNavBar />
     </div>
   );
 }
 
-export default Resources;
+export default Changelog;

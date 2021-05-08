@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 //Images
 import logo from '../../assets/Match-Logo.svg';
@@ -24,13 +25,18 @@ function Header() {
   const toggleResourceDropdown = () => {
     setResourceDropdownOpen(!isResourceDropdownOpen);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='header-style'>
       {/* Top Header Logo and navbar-icon*/}
       <div className='top-header'>
-        <a href='/'>
+        <Link to='/'>
           <img src={logo} className='logo' alt='logo' />
-        </a>
+        </Link>
         <div
           className={openNav ? 'toggle-wrap active' : 'toggle-wrap'}
           onClick={toggleNavbar}
@@ -43,10 +49,10 @@ function Header() {
         className={openNav ? 'sidenav open-navbar' : 'sidenav close-navbar'}
       >
         {/* Post Job Link */}
-        <a href='#' className='nav-link'>
+        <Link to='#' className='nav-link'>
           Post a Job
           <span className='coming-soon-status'>Coming Soon</span>
-        </a>
+        </Link>
 
         {/* About DS Dropdown */}
         <button className='nav-link dropdown-btn' onClick={toggleAboutDropdown}>
@@ -64,15 +70,15 @@ function Header() {
               : 'dropdown-container'
           }
         >
-          <a href='#' className='nav-link dropdown-link'>
+          <Link to='/changelog' className='nav-link dropdown-link'>
             Changelog
-          </a>
-          <a href='/privacy-policy' className='nav-link dropdown-link'>
+          </Link>
+          <Link to='/privacy-policy' className='nav-link dropdown-link'>
             Privacy Policy
-          </a>
-          <a href='#' className='nav-link dropdown-link'>
+          </Link>
+          <Link to='#' className='nav-link dropdown-link'>
             Contact us
-          </a>
+          </Link>
         </div>
 
         {/* Resources Dropdown */}
@@ -94,15 +100,15 @@ function Header() {
               : 'dropdown-container'
           }
         >
-          <a href='/guide-listing' className='nav-link dropdown-link'>
+          <Link to='/guide-listing' className='nav-link dropdown-link'>
             Guides
-          </a>
-          <a href='/challenge-listing' className='nav-link dropdown-link'>
+          </Link>
+          <Link to='/challenge-listing' className='nav-link dropdown-link'>
             Take Home Challenges
-          </a>
-          <a href='#' className='nav-link dropdown-link'>
+          </Link>
+          <Link to='/books-listing' className='nav-link dropdown-link'>
             Curated Bookshelf
-          </a>
+          </Link>
         </div>
       </div>
     </div>

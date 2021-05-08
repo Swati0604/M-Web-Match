@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 //Images
 import jobType from '../../assets/job-type.svg';
 import clock from '../../assets/clock.svg';
@@ -7,7 +8,7 @@ import './styles.scss';
 
 function GuideListingCard(props) {
   return (
-    <a className='guide-listing-card' href={`/guide-details/${props.slug}`}>
+    <Link className='guide-listing-card' to={`/guide-details/${props.slug}`}>
       <div className='text-container'>
         <p className='title'>{props.title}</p>
 
@@ -29,7 +30,7 @@ function GuideListingCard(props) {
       <div className='img-container'>
         <img src={props.url} className='img' alt='resource-img' />
       </div>
-    </a>
+    </Link>
   );
 }
 

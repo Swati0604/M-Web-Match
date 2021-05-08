@@ -12,7 +12,6 @@
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 
     //image-style
     .book-image {
@@ -21,13 +20,6 @@
       margin-right: 12px;
     }
 
-    .sub-title {
-      margin-bottom: 7px;
-    }
-
-    .glassdoor-rating {
-      margin-top: 7px;
-    }
     //book-name
     .book-name {
       font-size: 18px;

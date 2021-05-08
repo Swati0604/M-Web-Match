@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
+
 //Images
-import delhi from '../../assets/delhi.svg';
 import experienceIcon from '../../assets/experience-icon.svg';
 import locationIcon from '../../assets/location.svg';
 import jobTypeIcon from '../../assets/job-type.svg';
@@ -14,7 +15,7 @@ function JobCard(props) {
   };
   return (
     <div className='job-card-style'>
-      <a href={props.href}>
+      <Link to={props.href}>
         {/* top section */}
         <div className='job-card-top-section'>
           {/* company logo */}
@@ -66,7 +67,7 @@ function JobCard(props) {
             </div>
           )}
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

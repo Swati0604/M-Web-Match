@@ -3,12 +3,9 @@ import { Link } from 'react-router-dom';
 import { withGoogleSheets } from 'react-db-google-sheets';
 
 //Custom Component
-import books from '../../../assets/books.svg';
 import Footer from '../../../components/Footer';
 import BackNavigation from '../../../components/BackNavigation';
-import MentorListing from '../../../components/MentorListing';
 import Title from '../../../components/Title';
-import BooksCarousel from '../../../components/BooksCarousel';
 import SubTitle from '../../../components/SubTitle';
 import HomeGuideSec from '../../../components/HomeGuideSec';
 
@@ -19,6 +16,7 @@ import link from '../../../assets/link.svg';
 
 //Styles
 import './styles.scss';
+import Emoji from '../../../components/EmojiImport';
 
 function GuideDetails(props) {
   const slug = props.match.params.slug;
@@ -79,20 +77,26 @@ function GuideDetails(props) {
 
                 <div className='guide-text-section'>
                   <div className='guide-details'>
-                    <p className='title'>🎯 Purpose</p>
+                    <p className='title'>
+                      <Emoji symbol='🎯' /> Purpose
+                    </p>
                     <p className='sub-title'>{data.Purpose}</p>
                   </div>
 
                   <p className='title'>{data.title}</p>
                   <div className='guide-details'>
-                    <p className='title'>✅ Do’s</p>
+                    <p className='title'>
+                      <Emoji symbol='✅' /> Do’s
+                    </p>
                     <pre className='sub-title'>
                       {data.Do.replaceAll('✅', '•')}
                     </pre>
                   </div>
 
                   <div className='guide-details'>
-                    <p className='title'>❌ Dont’s</p>
+                    <p className='title'>
+                      <Emoji symbol='❌' /> Dont’s
+                    </p>
                     <pre className='sub-title'>
                       {data.DoNots.replaceAll('❌', '•')}
                     </pre>
@@ -106,9 +110,9 @@ function GuideDetails(props) {
       <div className='guides-section'>
         <div className='heading-see-all-button'>
           <Title title='Guides' />
-          <a href='/guide-listing' className='see-all-button'>
+          <Link to='/guide-listing' className='see-all-button'>
             See all
-          </a>
+          </Link>
         </div>
 
         <SubTitle subTitle='Good reads to prepare for design jobs.' />

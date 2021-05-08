@@ -9,41 +9,112 @@ import BackNavigation from '../../../components/BackNavigation';
 import MentorListing from '../../../components/MentorListing';
 import Title from '../../../components/Title';
 import BooksCarousel from '../../../components/BooksCarousel';
+import SubTitle from '../../../components/SubTitle';
+import HomeGuideSec from '../../../components/HomeGuideSec';
+
+//Images
+import jobType from '../../../assets/job-type.svg';
+import clock from '../../../assets/clock.svg';
+import link from '../../../assets/link.svg';
 
 //Styles
 import './styles.scss';
 
 function GuideDetails(props) {
+  const slug = props.match.params.slug;
   return (
     <div className='guide-details-style'>
-      <BackNavigation pageName='Books' pageType='Resources' />
+      {props.db &&
+        props.db.Guide &&
+        props.db.Guide.filter((data) => data.Slug === slug).map((data) => {
+          return (
+            <>
+              <BackNavigation pageName={data.Title} pageType='Guide' />
 
-      <div className='designer-listing-banner'>
-        <img src={books} className='designer-listing' />
-      </div>
+              <div className='guide-details-banner'>
+                <img src={data.Image} className='guide-image' />
+              </div>
 
-      <div className='designer-listing-content'>
-        <div className='text-box'>
-          <h4 className='heading'>Curated Bookshelf for Designers</h4>
-          <p className='sub-title'>
-            From the best designers, and design leaders you look up to.
-          </p>
+              <div className='guide-details-content'>
+                <div className='text-box'>
+                  <h4 className='heading'>{data.Title}</h4>
+                </div>
+
+                {data.authorName && (
+                  <div className='author-details'>
+                    {data.authorImg && (
+                      <div className='author-img-cont'>
+                        <img
+                          src={data.authorImg}
+                          className='img'
+                          alt='author-img'
+                        />
+                      </div>
+                    )}
+                    <p className='author-name'>{data.authorName}</p>
+                  </div>
+                )}
+
+                <div className='tag-button-container'>
+                  <div className='tag-container'>
+                    {data.Tags && (
+                      <div className='tag'>
+                        <img src={jobType} className='img' alt='resource-img' />
+                        <p className='sub-title'>{data.Tags}</p>
+                      </div>
+                    )}
+                    {data.Time && (
+                      <div className='tag'>
+                        <img src={clock} className='img' alt='resource-img' />
+                        <p className='sub-title'>{data.Time} Min read</p>
+                      </div>
+                    )}
+                  </div>
+
+                  <button className='copy-link-button'>
+                    <img src={link} alt='link' className='link-img' />
+                    Copy Link
+                  </button>
+                </div>
+
+                <div className='guide-text-section'>
+                  <div className='guide-details'>
+                    <p className='title'>🎯 Purpose</p>
+                    <p className='sub-title'>{data.Purpose}</p>
+                  </div>
+
+                  <p className='title'>{data.title}</p>
+                  <div className='guide-details'>
+                    <p className='title'>✅ Do’s</p>
+                    <pre className='sub-title'>
+                      {data.Do.replaceAll('✅', '•')}
+                    </pre>
+                  </div>
+
+                  <div className='guide-details'>
+                    <p className='title'>❌ Dont’s</p>
+                    <pre className='sub-title'>
+                      {data.DoNots.replaceAll('❌', '•')}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </>
+          );
+        })}
+
+      <div className='guides-section'>
+        <div className='heading-see-all-button'>
+          <Title title='Guides' />
+          <a href='/guide-listing' className='see-all-button'>
+            See all
+          </a>
         </div>
 
-        <div className='mentor-list'>
-          <Title title='Books recommended by' />
-          <MentorListing />
-        </div>
+        <SubTitle subTitle='Good reads to prepare for design jobs.' />
 
-        <div className='books-carousel-container'>
-          <div className='heading-see-all-button'>
-            <div className='text-section'>
-              <Title title='Most recommended books' />
-            </div>
-            <Link className='see-all-button'>See all</Link>
-          </div>
-
-          <BooksCarousel />
+        <div className='guide-card'>
+          <HomeGuideSec />
         </div>
       </div>
 
@@ -52,4 +123,4 @@ function GuideDetails(props) {
   );
 }
 
-export default withGoogleSheets('Sheet1')(GuideDetails);
+export default withGoogleSheets('Guide')(GuideDetails);

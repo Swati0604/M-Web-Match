@@ -15,6 +15,7 @@ import ChallengeListing from './containers/ChallengeFlow/ChallengeListing';
 import ChallengeDetails from './containers/ChallengeFlow/ChallengeDetails';
 import Resources from './containers/Resources';
 import GuideListing from './containers/Guides/GuideListing';
+import GuideDetails from './containers/Guides/GuideDetails';
 
 function AppRouter() {
   return (
@@ -42,6 +43,7 @@ function AppRouter() {
 
           {/* Guide Flow */}
           <Route exact path='/guide-listing' component={GuideListing} />
+          <Route exact path='/guide-details/:slug' component={GuideDetails} />
 
           {/* Resources listing */}
           <Route exact path='/resources' component={Resources} />

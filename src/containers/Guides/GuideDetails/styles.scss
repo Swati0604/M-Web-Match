@@ -8,27 +8,126 @@
 @import '../../../styles/variables/mixins.scss';
 
 .guide-details-style {
-  .designer-listing-banner {
-    background-color: $book-flow-bg;
+  .guide-details-banner {
     display: flex;
     justify-content: center;
     height: 216px;
     width: 100%;
+
+    .guide-image {
+      width: -webkit-fill-available;
+    }
   }
 
-  .designer-listing-content {
+  .guide-details-content {
     padding: 0 12px;
 
     .text-box {
-      margin: 30px 0px;
+      margin: 30px 0px 0px;
 
       .heading {
         margin-bottom: 6px;
       }
     }
 
-    .books-carousel-container {
-      margin: 48px 0px 0px;
+    .author-details {
+      display: flex;
+      align-items: center;
+
+      .author-name {
+        color: $primary;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+        margin-bottom: 0px;
+        margin-left: 10px;
+      }
+
+      .author-img-cont {
+        width: 34px;
+        height: 34px;
+        border-radius: 34px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '\2713';
+          bottom: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 12px;
+          font-size: 8px;
+          font-weight: bolder;
+          color: $white;
+          width: 12px;
+          height: 12px;
+          background-color: #45a0f0;
+        }
+
+        .img {
+          height: 100%;
+          width: 100%;
+        }
+      }
     }
+
+    .tag-button-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 23px;
+
+      .tag-container {
+        display: flex;
+        align-items: center;
+
+        .tag {
+          display: flex;
+          align-items: center;
+          margin-right: 12px;
+        }
+
+        .sub-title {
+          font-size: 12px;
+          margin-left: 8px;
+        }
+      }
+
+      .copy-link-button {
+        width: 119px;
+        height: 34px;
+        background: rgba(27, 72, 187, 0.04);
+        border-radius: 4px;
+        border: none;
+
+        .link-img {
+          margin-right: 7.2px;
+        }
+      }
+    }
+
+    .guide-details {
+      margin-top: 23px;
+      margin-bottom: 8px;
+
+      .sub-title {
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        margin-top: 14px;
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .guides-section {
+    padding: 0 12px;
+    margin-top: 32px;
   }
 }

@@ -15,6 +15,7 @@ import filter from '../../assets/filter.svg';
 //Styles
 import './styles.scss';
 import GuideListingCard from '../GuideListingCard';
+import NotFound from '../NotFound';
 
 const category = [
   {
@@ -149,12 +150,12 @@ function GuideListingSec(props) {
 
     if (timeFilter) {
       preFilterButton[2] = {
-        id: 2,
+        id: 'timeFilter',
         defaultActiveKey: 'second',
         isDataSelected: true,
         buttonName: timeFilter,
         onClick: (id) => {
-          setCategoryFilter(null);
+          setTimeFilter(null);
           let temp = filterButtonsData;
           temp[2] = {
             id: 2,
@@ -175,6 +176,38 @@ function GuideListingSec(props) {
     handleClose();
   };
 
+  const filterData = props.db.Guide.filter((data) => {
+    if (isFilterApplied === true) {
+      if (categoryFilter && !timeFilter) {
+        return data.Tags === categoryFilter;
+      } else if (timeFilter && !categoryFilter) {
+        if (timeFilter === 'Any duration') {
+          return data.Time;
+        } else if (timeFilter === 'Less than 3 min') {
+          return parseInt(data.Time) < 3;
+        } else if (timeFilter === '3 min') {
+          return parseInt(data.Time) === 3;
+        } else if (timeFilter === 'More than 3 min') {
+          return parseInt(data.Time) > 3;
+        }
+      } else if (categoryFilter && timeFilter) {
+        if (timeFilter === 'Any duration') {
+          return data.Time && data.Tags === categoryFilter;
+        } else if (timeFilter === 'Less than 3 min') {
+          return parseInt(data.Time) < 3 && data.Tags === categoryFilter;
+        } else if (timeFilter === '3 min') {
+          return parseInt(data.Time) === 3 && data.Tags === categoryFilter;
+        } else if (timeFilter === 'More than 3 min') {
+          return parseInt(data.Time) > 3 && data.Tags === categoryFilter;
+        }
+      } else if (!categoryFilter && !timeFilter) {
+        return data.Tags || data.Time;
+      }
+    } else {
+      return data.Tags || data.Time;
+    }
+  });
+
   return (
     <div className='guide-listing-sec-style'>
       <FilterButtonCarousel
@@ -184,55 +217,32 @@ function GuideListingSec(props) {
 
       {props.db &&
         props.db.Guide &&
-        props.db.Guide.filter((data) => {
-          if (isFilterApplied) {
-            if (categoryFilter && !timeFilter) {
-              return data.Tags === categoryFilter;
-            } else if (timeFilter && !categoryFilter) {
-              if (timeFilter === 'Any duration') {
-                return data.Time;
-              } else if (timeFilter === 'Less than 3 min') {
-                return parseInt(data.Time) < 3;
-              } else if (timeFilter === '3 min') {
-                return parseInt(data.Time) === 3;
-              } else if (timeFilter === 'More than 3 min') {
-                return parseInt(data.Time) > 3;
-              }
-            } else if (categoryFilter && timeFilter) {
-              if (timeFilter === 'Any duration') {
-                return data.Time && data.Tags === categoryFilter;
-              } else if (timeFilter === 'Less than 3 min') {
-                return parseInt(data.Time) < 3 && data.Tags === categoryFilter;
-              } else if (timeFilter === '3 min') {
-                return (
-                  parseInt(data.Time) === 3 && data.Tags === categoryFilter
-                );
-              } else if (timeFilter === 'More than 3 min') {
-                return parseInt(data.Time) > 3 && data.Tags === categoryFilter;
-              }
-            } else if (!categoryFilter && !timeFilter) {
-              return data.Tags || data.Time;
-            }
-          } else {
-            return data.Tags || data.Time;
-          }
-        })
-          .slice(0, visibleGuide)
-          .map((data, index) => (
-            <div key={index}>
-              <GuideListingCard
-                url={data.Image}
-                title={data.Title}
-                tag={data.Tags}
-                time={data.Time}
-              />
-            </div>
-          ))}
+        filterData.slice(0, visibleGuide).map((data, index) => (
+          <div key={index}>
+            <GuideListingCard
+              url={data.Image}
+              title={data.Title}
+              tag={data.Tags}
+              time={data.Time}
+              slug={data.Slug}
+            />
+          </div>
+        ))}
 
-      {visibleGuide < 6 && props.db.Guide.length >= 6 && (
-        <LoadMoreButton
-          onClick={() => loadMore()}
-          buttonText='Load More Guides'
+      {filterData.length > 6 &&
+        visibleGuide < props.db.Guide.length &&
+        props.db.Guide.length >= 6 && (
+          <LoadMoreButton
+            onClick={() => loadMore()}
+            buttonText='Load More Guides'
+          />
+        )}
+
+      {filterData.length}
+      {filterData.length === 0 && (
+        <NotFound
+          title='Sorry! We couldn’t find the filtered guide that you’re looking for.'
+          subTitle='Check back in some time. It’s a good thing we always keep our guides updated.'
         />
       )}
 

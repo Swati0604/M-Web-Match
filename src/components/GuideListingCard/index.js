@@ -7,7 +7,7 @@ import './styles.scss';
 
 function GuideListingCard(props) {
   return (
-    <div className='guide-listing-card'>
+    <a className='guide-listing-card' href={`/guide-details/${props.slug}`}>
       <div className='text-container'>
         <p className='title'>{props.title}</p>
 
@@ -29,7 +29,7 @@ function GuideListingCard(props) {
       <div className='img-container'>
         <img src={props.url} className='img' alt='resource-img' />
       </div>
-    </div>
+    </a>
   );
 }
 

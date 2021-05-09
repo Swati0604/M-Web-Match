@@ -40,7 +40,9 @@ function DesignerListing(props) {
             <div className='text-section'>
               <Title title='Most recommended books' />
             </div>
-            <Link className='see-all-button'>See all</Link>
+            <Link to='/books-listing' className='see-all-button'>
+              See all
+            </Link>
           </div>
 
           <BooksCarousel />

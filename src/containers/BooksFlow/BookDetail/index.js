@@ -110,10 +110,12 @@ function BookDetails(props) {
           <div className='text-section'>
             <Title title='Other most recommended books' />
           </div>
-          <Link className='see-all-button'>See all</Link>
+          <Link to='/books-listing' className='see-all-button'>
+            See all
+          </Link>
         </div>
 
-        <BooksCarousel />
+        <BooksCarousel bookName={bookName} />
       </div>
 
       <Footer />

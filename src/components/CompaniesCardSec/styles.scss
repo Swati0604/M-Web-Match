@@ -1,0 +1,29 @@
+// ######################################## //
+// ## COMPANYCARDSEC.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.company-sec-style {
+  margin-top: 19px;
+
+  .horizontal-line {
+    margin: 23px -12px 20px;
+    border: 1px solid #dde3e7;
+  }
+
+  .available-jobs-text {
+    font-size: 13px;
+    line-height: 100%;
+    color: rgba($primary, 0.8);
+    font-weight: 700;
+    margin: 13.5px 0 23px 98px;
+  }
+
+  .btn-cont {
+    margin-top: 23px;
+  }
+}

@@ -1,0 +1,22 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/variables/mixins.scss';
+
+.companies-listing-style {
+  .companies-listing-container {
+    padding: 90px 12px 0;
+
+    .companies-card-section {
+      margin-top: 30px;
+    }
+
+    .guides-section {
+      margin-top: 48px;
+    }
+  }
+}

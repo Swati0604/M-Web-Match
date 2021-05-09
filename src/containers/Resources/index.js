@@ -79,7 +79,7 @@ function Resources(props) {
         <Footer />
       </div>
 
-      <BottomNavBar />
+      <BottomNavBar currentPage='Resources' />
     </div>
   );
 }

@@ -1,0 +1,35 @@
+// ######################################## //
+// ## BOOKS-CAROUSEL.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.mentor-carousel-style {
+  margin: 20px -12px 0;
+
+  .mentor-card-container {
+    padding: 12px 2px 3px 12px;
+  }
+
+  //image-style
+  .book-image {
+    height: 220px;
+    width: 100%;
+  }
+
+  .book-name {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 130%;
+    color: $primary;
+    margin: 12px 0 0;
+  }
+
+  .owl-carousel .owl-item img {
+    width: 100%;
+  }
+}

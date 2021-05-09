@@ -1,0 +1,84 @@
+// ######################################## //
+// ## HEADER.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/variables/mixins.scss';
+
+.company-detail-style {
+  .company-name {
+    padding: 70px 12px 0;
+
+    .sub-title {
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 14px;
+
+      .tag {
+        background-color: rgba($secondary, 0.06);
+        font-size: 11px;
+        font-family: 'Nunito', sans-serif;
+        color: $secondary;
+        line-height: 100%;
+        padding: 4px 6px;
+        border-radius: 25px;
+        margin-right: 8px;
+        margin-bottom: 0;
+      }
+    }
+
+    .icons-text {
+      display: flex;
+      align-items: center;
+      margin-top: 14px;
+
+      .icons {
+        margin-right: 8px;
+        height: 11px;
+        width: 11px;
+      }
+
+      .sub-title {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .tab-section {
+    padding: 0 12px;
+    margin-top: 30px;
+  }
+
+  .nav-tabs {
+    display: flex;
+    border-bottom: 2px solid #e7edef;
+
+    .nav-link {
+      border: none;
+      padding: 5px 8px;
+    }
+
+    .nav-link.active {
+      font-family: 'Poppins', sans-serif;
+      color: $primary;
+      font-weight: 600;
+      border-bottom: none;
+    }
+  }
+
+  .tab-content {
+    margin: 20px 0 40px;
+
+    .job-card-style .job-card-top-section .company-job-details {
+      margin-left: 0px;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+// ######################################## //
+// ## company CARD.SCSS ## //
+// ######################################## //
+
+//Title Section Style
+
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/mixins.scss';
+
+.company-card-style {
+  .company-card-top-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .img-card {
+      height: 80px;
+      width: 80px;
+      border: 1px solid rgba(104, 112, 134, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .company-logo {
+      height: 100%;
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    .company-company-details {
+      margin-left: 16px;
+    }
+
+    .position {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .company {
+      font-size: 16px;
+      line-height: 120%;
+      margin-bottom: 8px;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .tag {
+      background-color: rgba($secondary, 0.06);
+      font-size: 12px;
+      font-family: 'Nunito', sans-serif;
+      color: $secondary;
+      line-height: 100%;
+      padding: 4px 6px;
+      border-radius: 25px;
+      margin-right: 8px;
+      margin-bottom: 0;
+    }
+  }
+
+  .icons-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11.5px;
+
+    .icons {
+      margin-right: 8px;
+      height: 11px;
+      width: 11px;
+    }
+
+    .sub-title {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+}

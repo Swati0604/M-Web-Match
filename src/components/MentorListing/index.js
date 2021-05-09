@@ -23,7 +23,7 @@ function MentorListing(props) {
             <div className='mentor-card-container' key={index}>
               <MentorCard
                 mentorImage={data.Image}
-                //title={data.Title}
+                // title={data.Title}
                 name={data.Name}
                 tagline={data.Tagline}
                 mentorName={data.Name}

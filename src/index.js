@@ -5,7 +5,6 @@ import { hydrate } from 'react-dom';
 
 //Custom Component
 import AppRouter from './AppRouter';
-import ScrollRestoration from 'react-scroll-restoration';
 import ScrollTop from './components/ScrollTop';
 
 hydrate(

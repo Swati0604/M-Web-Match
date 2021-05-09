@@ -90,7 +90,7 @@ function Home(props) {
         <Footer />
       </div>
 
-      <BottomNavBar />
+      <BottomNavBar currentPage='Home' />
     </div>
   );
 }

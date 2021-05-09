@@ -15,6 +15,7 @@ import closeBottom from '../../assets/close.svg';
 
 //Styles
 import './styles.scss';
+import NotFound from '../NotFound';
 
 const jobType = [
   {
@@ -52,7 +53,7 @@ const experience = [
   {
     id: 7,
     name: 'experience',
-    filterName: '2 -3  years',
+    filterName: '2 -3 years',
   },
   {
     id: 8,
@@ -62,12 +63,12 @@ const experience = [
   {
     id: 9,
     name: 'experience',
-    filterName: '4 - 5 years',
+    filterName: '4 -5 years',
   },
   {
     id: 10,
     name: 'experience',
-    filterName: '6+  years',
+    filterName: '6+ years',
   },
 ];
 
@@ -100,7 +101,17 @@ const location = [
   {
     id: 16,
     name: 'location',
-    filterName: 'Bangalore',
+    filterName: 'Gurgaon',
+  },
+  {
+    id: 17,
+    name: 'location',
+    filterName: 'Hyderabad',
+  },
+  {
+    id: 18,
+    name: 'location',
+    filterName: 'Mumbai',
   },
 ];
 
@@ -109,7 +120,7 @@ function HomeAllJobs(props) {
   const [isModalVisible, setModalVisible] = useState(false);
   const [defaultActiveKey, setDefaultActiveKey] = useState();
   const [experienceFilter, setExperienceFilter] = useState();
-  const [locationFilter, setlocationFilter] = useState();
+  const [locationFilter, setLocationFilter] = useState();
   const [jobTypeFilter, setjobTypeFilter] = useState();
   const [isFilterApplied, setIsFilterApplied] = useState(false);
 
@@ -129,28 +140,25 @@ function HomeAllJobs(props) {
 
   const experienceDataChange = (e) => {
     if (e.target.checked) {
-      console.log('experience=====>>>', e.target.value);
       setExperienceFilter(e.target.value);
     }
   };
 
   const locationDataChange = (e) => {
     if (e.target.checked) {
-      console.log('location=====>>>', e.target.value);
-      setlocationFilter(e.target.value);
+      setLocationFilter(e.target.value);
     }
   };
 
   const jobTypeDataChange = (e) => {
     if (e.target.checked) {
-      console.log('jobType=====>>>', e.target.value);
       setjobTypeFilter(e.target.value);
     }
   };
 
   const onClickClear = () => {
     setExperienceFilter();
-    setlocationFilter();
+    setLocationFilter();
     setjobTypeFilter();
     setModalVisible(false);
   };
@@ -159,6 +167,7 @@ function HomeAllJobs(props) {
     0: {
       id: 0,
       defaultActiveKey: 'first',
+      filter: true,
       buttonLeftImg: filter,
       buttonName: 'Filters',
       onClick: (id) => {
@@ -168,7 +177,6 @@ function HomeAllJobs(props) {
     1: {
       id: 1,
       defaultActiveKey: 'first',
-      buttonRightImg: arrowBottom,
       buttonName: 'Experience',
       onClick: (id) => {
         openModal(id);
@@ -177,7 +185,6 @@ function HomeAllJobs(props) {
     2: {
       id: 2,
       defaultActiveKey: 'second',
-      buttonRightImg: arrowBottom,
       buttonName: 'Location',
       onClick: (id) => {
         openModal(id);
@@ -186,7 +193,6 @@ function HomeAllJobs(props) {
     3: {
       id: 3,
       defaultActiveKey: 'third',
-      buttonRightImg: arrowBottom,
       buttonName: 'Job Type',
       onClick: (id) => {
         openModal(id);
@@ -201,7 +207,7 @@ function HomeAllJobs(props) {
       preFilterButton[1] = {
         id: 'experienceFilter',
         defaultActiveKey: 'first',
-        buttonLeftImg: arrowBottom,
+        isDataSelected: true,
         buttonName: experienceFilter,
         onClick: (id) => {
           setExperienceFilter(null);
@@ -209,7 +215,7 @@ function HomeAllJobs(props) {
           temp[1] = {
             id: 1,
             defaultActiveKey: 'first',
-            buttonRightImg: arrowBottom,
+            isDataSelected: false,
             buttonName: 'Experience',
             onClick: (id) => {
               openModal(id);
@@ -222,52 +228,237 @@ function HomeAllJobs(props) {
 
     if (locationFilter) {
       preFilterButton[2] = {
-        id: 2,
+        id: 'locationFilter',
         defaultActiveKey: 'second',
-        buttonLeftImg: arrowBottom,
         buttonName: locationFilter,
+        isDataSelected: true,
         onClick: (id) => {
-          console.log('Location Filter Close wali id', id);
-        },
-      };
-    } else {
-      preFilterButton[2] = {
-        id: 2,
-        defaultActiveKey: 'second',
-        buttonRightImg: arrowBottom,
-        buttonName: 'Location',
-        onClick: (id) => {
-          openModal(id);
+          setLocationFilter(null);
+          let temp = filterButtonsData;
+          temp[2] = {
+            id: 2,
+            defaultActiveKey: 'second',
+            buttonName: 'Location',
+            isDataSelected: false,
+            onClick: (id) => {
+              openModal(id);
+            },
+          };
+          setFilterButtonsData(temp);
         },
       };
     }
 
     if (jobTypeFilter) {
       preFilterButton[3] = {
-        id: 3,
+        id: 'jobTypeFilter',
         defaultActiveKey: 'third',
-        buttonLeftImg: arrowBottom,
         buttonName: jobTypeFilter,
+        isDataSelected: true,
         onClick: (id) => {
-          console.log('Job Type Filter Close wali id', id);
-        },
-      };
-    } else {
-      preFilterButton[3] = {
-        id: 3,
-        defaultActiveKey: 'third',
-        buttonRightImg: arrowBottom,
-        buttonName: 'Job Type',
-        onClick: (id) => {
-          openModal(id);
+          setjobTypeFilter(null);
+          let temp = filterButtonsData;
+          temp[3] = {
+            id: 3,
+            defaultActiveKey: 'third',
+            isDataSelected: false,
+            buttonName: 'Job Type',
+            onClick: (id) => {
+              openModal(id);
+            },
+          };
+          setFilterButtonsData(temp);
         },
       };
     }
+
     setFilterButtonsData(preFilterButton);
 
     setIsFilterApplied(true);
     handleClose();
   };
+
+  const shuffle = (array) => {
+    if (shuffle.done) return;
+
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    shuffle.done = true;
+
+    return array;
+  };
+
+  shuffle(props.db.Sheet1);
+
+  const filterJobData = props.db.Sheet1.filter((data) => {
+    if (isFilterApplied === true) {
+      if (locationFilter && !experienceFilter && !jobTypeFilter) {
+        return data.Location === locationFilter;
+      } else if (jobTypeFilter && !locationFilter && !experienceFilter) {
+        return data.JobType === jobTypeFilter;
+      } else if (experienceFilter && !locationFilter && !jobTypeFilter) {
+        if (experienceFilter === '0 -1 years') {
+          return (
+            parseInt(data.Experience) === 1 || data.Experience === 'Fresher'
+          );
+        } else if (experienceFilter === '1 -2 years') {
+          return (
+            parseInt(data.Experience) === 1 || parseInt(data.Experience) === 2
+          );
+        } else if (experienceFilter === '2 -3 years') {
+          return (
+            parseInt(data.Experience) === 2 || parseInt(data.Experience) === 3
+          );
+        } else if (experienceFilter === '3 -4 years') {
+          return (
+            parseInt(data.Experience) === 3 || parseInt(data.Experience) === 4
+          );
+        } else if (experienceFilter === '4 - 5 years') {
+          return (
+            parseInt(data.Experience) === 4 || parseInt(data.Experience) === 5
+          );
+        } else if (experienceFilter === '6+ years') {
+          return parseInt(data.Experience) >= 6;
+        }
+      } else if (locationFilter && jobTypeFilter && !experienceFilter) {
+        return (
+          data.Location === locationFilter && data.JobType === jobTypeFilter
+        );
+      } else if (locationFilter && experienceFilter && !jobTypeFilter) {
+        if (experienceFilter === '0 -1 years') {
+          return (
+            (parseInt(data.Experience) === 1 ||
+              data.Experience === 'Fresher') &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '1 -2 years') {
+          return (
+            (parseInt(data.Experience) === 1 ||
+              parseInt(data.Experience) === 2) &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '2 -3 years') {
+          return (
+            (parseInt(data.Experience) === 2 ||
+              parseInt(data.Experience) === 3) &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '3 -4 years') {
+          return (
+            (parseInt(data.Experience) === 3 ||
+              parseInt(data.Experience) === 4) &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '4 - 5 years') {
+          return (
+            (parseInt(data.Experience) === 4 ||
+              parseInt(data.Experience) === 5) &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '6+ years') {
+          return (
+            parseInt(data.Experience) >= 6 && data.Location === locationFilter
+          );
+        }
+      } else if (jobTypeFilter && experienceFilter && !locationFilter) {
+        if (experienceFilter === '0 -1 years') {
+          return (
+            (parseInt(data.Experience) === 1 ||
+              data.Experience === 'Fresher') &&
+            data.JobType === jobTypeFilter
+          );
+        } else if (experienceFilter === '1 -2 years') {
+          return (
+            (parseInt(data.Experience) === 1 ||
+              parseInt(data.Experience) === 2) &&
+            data.JobType === jobTypeFilter
+          );
+        } else if (experienceFilter === '2 -3 years') {
+          return (
+            (parseInt(data.Experience) === 2 ||
+              parseInt(data.Experience) === 3) &&
+            data.JobType === jobTypeFilter
+          );
+        } else if (experienceFilter === '3 -4 years') {
+          return (
+            (parseInt(data.Experience) === 3 ||
+              parseInt(data.Experience) === 4) &&
+            data.JobType === jobTypeFilter
+          );
+        } else if (experienceFilter === '4 - 5 years') {
+          return (
+            (parseInt(data.Experience) === 4 ||
+              parseInt(data.Experience) === 5) &&
+            data.JobType === jobTypeFilter
+          );
+        } else if (experienceFilter === '6+ years') {
+          return (
+            parseInt(data.Experience) >= 6 && data.JobType === jobTypeFilter
+          );
+        }
+      } else if (jobTypeFilter && experienceFilter && locationFilter) {
+        if (experienceFilter === '0 -1 years') {
+          return (
+            (parseInt(data.Experience) === 1 ||
+              data.Experience === 'Fresher') &&
+            data.JobType === jobTypeFilter &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '1 -2 years') {
+          return (
+            (parseInt(data.Experience) === 1 ||
+              parseInt(data.Experience) === 2) &&
+            data.JobType === jobTypeFilter &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '2 -3 years') {
+          return (
+            (parseInt(data.Experience) === 2 ||
+              parseInt(data.Experience) === 3) &&
+            data.JobType === jobTypeFilter &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '3 -4 years') {
+          return (
+            (parseInt(data.Experience) === 3 ||
+              parseInt(data.Experience) === 4) &&
+            data.JobType === jobTypeFilter &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '4 - 5 years') {
+          return (
+            (parseInt(data.Experience) === 4 ||
+              parseInt(data.Experience) === 5) &&
+            data.JobType === jobTypeFilter &&
+            data.Location === locationFilter
+          );
+        } else if (experienceFilter === '6+ years') {
+          return (
+            parseInt(data.Experience) >= 6 &&
+            data.JobType === jobTypeFilter &&
+            data.Location === locationFilter
+          );
+        }
+      } else if (!experienceFilter && !locationFilter && !jobTypeFilter) {
+        return data.Location && data.Experience && data.Location;
+      }
+    } else {
+      return data.Location && data.Experience && data.Location;
+    }
+  });
 
   return (
     <div className='home-all-job-style'>
@@ -275,56 +466,53 @@ function HomeAllJobs(props) {
         filterButtons={Object.values(filterButtonsData)}
         onClickFilterButton={openModal}
       />
-      {console.log(isFilterApplied)}
 
       {props.db &&
         props.db.Sheet1 &&
-        props.db.Sheet1.filter((data) => {
-          switch (isFilterApplied) {
-            case locationFilter && jobTypeFilter:
-              console.log('123');
-              return (
-                data.JobType === jobTypeFilter &&
-                data.Location === locationFilter
-              );
-            case locationFilter:
-              return data.Location === locationFilter;
-            case jobTypeFilter:
-              return data.JobType === jobTypeFilter;
-            default:
-              return data.Location && data.JobType;
-          }
-        })
-          .slice(0, visibleJob)
-          .map((data, index) => (
-            <div key={index}>
-              {data.Location}
-              {props.db &&
-                props.db.Companies &&
-                props.db.Companies.filter(
-                  (item) => item.Company === data.Company
-                ).map((item, index) => (
-                  <div key={index}>
-                    <JobCard
-                      companyLogo={item.Logo}
-                      position={data.Position}
-                      company={item.Company}
-                      jobType={data.JobType}
-                      location={data.Location}
-                      experience={data.Experience}
-                      isRemote={data.Remote}
-                      href={data.Link}
-                      slug={data.Slug}
-                      tag1={item.Tag1}
-                      tag2={item.Tag2}
-                      tag3={item.Tag3}
-                    />
-                  </div>
-                ))}
-            </div>
-          ))}
+        filterJobData.slice(0, visibleJob).map((data, index) => (
+          <div key={index}>
+            {props.db &&
+              props.db.Companies &&
+              props.db.Companies.filter(
+                (item) => item.Company === data.Company && data.Closed != 'Yes'
+              ).map((item, index) => (
+                <div key={index}>
+                  <JobCard
+                    companyLogo={item.Logo}
+                    position={data.Position}
+                    company={item.Company}
+                    jobType={data.JobType}
+                    location={data.Location}
+                    experience={data.Experience}
+                    isRemote={data.Remote}
+                    href={data.Link}
+                    slug={data.Slug}
+                    tag1={item.Tag1}
+                    tag2={item.Tag2}
+                    tag3={item.Tag3}
+                  />
+                </div>
+              ))}
+          </div>
+        ))}
 
-      <LoadMoreButton onClick={() => loadMore()} buttonText='Load More Jobs' />
+      {filterJobData.length > 9 &&
+        filterJobData.length > visibleJob &&
+        props.db.Sheet1.length > visibleJob &&
+        !(visibleJob === visibleJob + 1) &&
+        props.db.Sheet1.length >= 9 && (
+          <LoadMoreButton
+            onClick={() => loadMore()}
+            buttonText='Load More Jobs'
+          />
+        )}
+
+      {filterJobData.length === 0 && (
+        <NotFound
+          title='Sorry! We couldn’t find anything here.'
+          subTitle='Check back in some time. It’s a good thing we update the jobs twice a week. So, fingers crossed 🤞.'
+        />
+      )}
 
       <FilterModal
         isModalVisible={isModalVisible}

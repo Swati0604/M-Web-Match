@@ -15,22 +15,28 @@ function JobCard(props) {
   };
   return (
     <div className='job-card-style'>
-      <Link to={props.href}>
+      <a href={props.href}>
         {/* top section */}
         <div className='job-card-top-section'>
           {/* company logo */}
-          <div className='img-card'>
-            <img
-              src={props.companyLogo}
-              alt='company-image'
-              className='company-logo'
-            />
-          </div>
+          {props.companyLogo && (
+            <div className='img-card'>
+              <img
+                src={props.companyLogo}
+                alt='company-image'
+                className='company-logo'
+              />
+            </div>
+          )}
 
           {/* position and company name */}
           <div className='company-job-details'>
-            <p className='title position'>{props.position}</p>
-            <p className='sub-title company'>{props.company}</p>
+            {props.position && (
+              <p className='title position'>{props.position}</p>
+            )}
+            {props.company && (
+              <p className='sub-title company'>{props.company}</p>
+            )}
 
             {/* tag to define company */}
             <div className='tag-container'>
@@ -67,7 +73,7 @@ function JobCard(props) {
             </div>
           )}
         </div>
-      </Link>
+      </a>
     </div>
   );
 }

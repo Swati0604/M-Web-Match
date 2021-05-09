@@ -17,13 +17,18 @@ import twitter from '../../../assets/twitter.svg';
 //Styles
 import './styles.scss';
 import RecommendedBooks from '../../../components/RecommendedBooks';
+import DesignerCarousel from '../../../components/DesignerCarousel';
 
 function MentorProfile(props) {
   const mentorName = props.match.params.mentorName;
 
   return (
     <div className='mentor-profile-style'>
-      <BackNavigation pageName='Mentor' pageType={mentorName} />
+      <BackNavigation
+        pageName='Mentor'
+        pageType={mentorName}
+        href='/designer-listing'
+      />
 
       <div className='mentor-profile-banner'>
         {props.db &&
@@ -98,10 +103,12 @@ function MentorProfile(props) {
             <div className='text-section'>
               <Title title='Suggestions by other designers' />
             </div>
-            <Link className='see-all-button'>See all</Link>
+            <Link to='/designer-listing' className='see-all-button'>
+              See all
+            </Link>
           </div>
 
-          <BooksCarousel />
+          <DesignerCarousel mentorName={mentorName} />
         </div>
       </div>
 

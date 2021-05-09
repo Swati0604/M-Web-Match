@@ -28,6 +28,13 @@ import Changelog from './containers/Changelog';
 import BooksListing from './containers/BooksFlow/BookListing';
 import BookDetail from './containers/BooksFlow/BookDetail';
 
+//Company Flow
+import CompaniesList from './containers/Companies/CompaniesList';
+import CompanyDetail from './containers/Companies/CompanyDetail';
+
+//Page404
+import Page404 from './containers/Page404';
+
 //Styles
 import './styles/App.scss';
 
@@ -59,6 +66,14 @@ function AppRouter() {
       <Route exact path='/guide-listing' component={GuideListing} />
       <Route exact path='/guide-details/:slug' component={GuideDetails} />
 
+      {/* Companies Flow */}
+      <Route exact path='/companies-list' component={CompaniesList} />
+      <Route
+        exact
+        path='/company-detail/:companyName'
+        component={CompanyDetail}
+      />
+
       {/* Resources listing */}
       <Route exact path='/resources' component={Resources} />
 
@@ -67,6 +82,9 @@ function AppRouter() {
 
       {/* Changelog */}
       <Route exact path='/changelog' component={Changelog} />
+
+      {/* Page404 and Page500 */}
+      <Route path='' component={Page404} />
     </Switch>
   );
 }

@@ -7,6 +7,7 @@ import { withGoogleSheets } from 'react-db-google-sheets';
 
 //Styles
 import './styles.scss';
+import MentorCard from '../MentorCard';
 
 const options = {
   nav: true,
@@ -37,7 +38,7 @@ const options = {
   },
 };
 
-function BooksCarousel(props) {
+function DesignerCarousel(props) {
   const truncate = (str) => {
     return str.length > 10 ? str.substring(0, 12) + '...' : str;
   };
@@ -46,27 +47,20 @@ function BooksCarousel(props) {
     return str.length > 20 ? str.substring(0, 14) + '...' : str;
   };
   return (
-    <div className='books-carousel-style'>
+    <div className='mentor-carousel-style'>
       <OwlCarousel className='owl-theme' {...options}>
         {props.db &&
-          props.db.Books &&
-          props.db.Books.filter((data) => data.Title != props.bookName).map(
+          props.db.Mentors &&
+          props.db.Mentors.filter((data) => data.Name != props.mentorName).map(
             (data, index) => (
-              <div className='book-card-container' key={index}>
-                <div className='book-card'>
-                  <Link to='/'>
-                    <img
-                      src={data.Image}
-                      alt='book-image'
-                      className='book-image'
-                    />
-                  </Link>
-                  <p className='book-name'>{truncate(data.Title)}</p>
-                  <p className='sub-title'>
-                    by: {truncateAuthorName(data.Author)}
-                  </p>
-                  <ReactStars value={data.GlassdoorRatings} size={18} />
-                </div>
+              <div className='mentor-card-container'>
+                <MentorCard
+                  mentorImage={data.Image}
+                  // title={data.Title}
+                  name={data.Name}
+                  tagline={data.Tagline}
+                  mentorName={data.Name}
+                />
               </div>
             )
           )}
@@ -75,4 +69,4 @@ function BooksCarousel(props) {
   );
 }
 
-export default withGoogleSheets(['Books'])(BooksCarousel);
+export default withGoogleSheets(['Mentors'])(DesignerCarousel);

@@ -11,6 +11,7 @@ import BooksCarousel from '../../../components/BooksCarousel';
 
 //Styles
 import './styles.scss';
+import DesignerCarousel from '../../../components/DesignerCarousel';
 
 function BooksListing(props) {
   return (
@@ -35,10 +36,12 @@ function BooksListing(props) {
             <div className='text-section'>
               <Title title='Suggestions by other designers' />
             </div>
-            <Link className='see-all-button'>See all</Link>
+            <Link to='/designer-listing' className='see-all-button'>
+              See all
+            </Link>
           </div>
 
-          <BooksCarousel />
+          <DesignerCarousel />
         </div>
 
         <Footer />

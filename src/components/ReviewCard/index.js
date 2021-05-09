@@ -6,7 +6,9 @@ function ReviewCard(props) {
     <div className='review-card-style'>
       <div className='review-card'>
         <div className='reviewer-info'>
-          <img src={props.src} alt='review-image' className='review-image' />
+          {props.src && (
+            <img src={props.src} alt='review-image' className='review-image' />
+          )}
           <p className='review-name'>{props.name}</p>
         </div>
         <p className='sub-title'>{props.review}</p>
